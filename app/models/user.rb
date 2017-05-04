@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   include ApplicationHelper
   before_save { self.email = email.downcase }
   before_create :confirmation_token
-  after_save :check_geocodes
+  #after_save :check_geocodes
   has_many :posts
   has_many :comments, dependent: :destroy
   validates :name , length: { minimum: 4 , maximum: 12}
@@ -11,8 +11,8 @@ class User < ActiveRecord::Base
   validates :password , length: { minimum: 6 }
   has_secure_password
   mount_uploader :profile_img, ImageUploader
-  geocoded_by :city
-  after_validation :geocode
+  #geocoded_by :city
+  #after_validation :geocode
   after_destroy :delete_user_image_folder
 
   def authenticated?(remember_token)
@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
       true
     end
   end
-  
+
   private
 
   def delete_user_image_folder

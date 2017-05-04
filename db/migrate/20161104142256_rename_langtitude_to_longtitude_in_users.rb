@@ -1,9 +1,7 @@
 class RenameLangtitudeToLongtitudeInUsers < ActiveRecord::Migration
-  def up
-    rename_column :users, :langtitude, :longitude
+  def change
+    add_column :users, :longitude, :string
+    add_column :users, :city, :string
   end
-
-  def down
-    rename_column :users, :longitude, :langtitude
-  end
+  #  add_column :users, :langtitude, :longitude
 end

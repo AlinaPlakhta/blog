@@ -46,14 +46,3 @@
     <%= render partial: "shared/profile" %>
   </div>
 </div>
-
-<script type="text/javascript">
-handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-markers = handler.addMarkers([
-{ "lat":  <%= @user.latitude %>,
- "lng": <%= @user.longitude %>,
- "infowindow": "<b><%= @user.name %></b>" }]);
-handler.map.centerOn([<%= @user.latitude %>, <%= @user.longitude %>]);
-});
-</script>
