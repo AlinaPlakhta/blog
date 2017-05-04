@@ -43,15 +43,11 @@ ActiveRecord::Schema.define(version: 20161104142256) do
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
     t.string   "remember_digest"
-    t.string   "activation_digest"
-    t.boolean  "activated",            default: false
-    t.datetime "activated_at"
     t.boolean  "email_confirm_status", default: false
     t.string   "confirm_token"
     t.string   "reset_token"
     t.datetime "token_created"
-    t.float    "latitude"
-    t.float    "longitude"
+    t.string   "longitude"
     t.string   "city"
   end
 
